@@ -18,6 +18,12 @@ function generatePassword() {
     alert("Not a valid selection. Please enter a number between 8-128.");
     //ADD LOOP TO RE-ENTER SELECTION
   }
+  var numbers = confirm("Would you like to use numbers?");
+  if (numbers === true) {
+    console.log("yes");
+  } else if (numbers === false) {
+    console.log("no");
+  }
   var lowercase = confirm("Would you like to use lowercase letters?");
   if (lowercase === true) {
     console.log("yes");
