@@ -42,6 +42,11 @@ function generatePassword() {
   } else if (specialChar === false) {
     console.log("no");
   }
+
+  var numbersDef = '1234567890';
+  var lowercaseDef = 'abcdefghijklmnopqrstuvwxyz';
+  var uppercaseDef = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var specialCharDef = '!@#$%^&*()-_=+`~,.<>/?\|;:';
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
