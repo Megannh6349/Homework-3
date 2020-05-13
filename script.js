@@ -1,62 +1,8 @@
 // Defining variables to put into array
-var numbersDef = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-var lowercaseDef = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z"
-];
-var uppercaseDef = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z"
-];
-var specialCharDef = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var numbersDef = ["1234567890"];
+var lowercaseDef = ["abcdefghijklmnopqrstuvwxyz"];
+var uppercaseDef = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var specialCharDef = ["!@#$%^&*()"];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -115,17 +61,31 @@ function getPasswordOptions() {
 
   // Checking array, trying to make it a string so charAt works on line 123
   console.log("caseArray is: " + caseArray);
-  caseArray.toString;
-  console.log("caseArray is now: " + caseArray)
+  var caseString = caseArray.toString();
+  console.log("caseArray is now: " + caseString)
   // Executing the function
+
+  /* This currently works! It sends all of the characters for the password
+  to the console log, but just only displays the most recently pulled one in the box */
   function generatePassword(length) {
     result = '';
-      var charactersLength = caseArray.length;
+    var charactersLength = caseString.length;
     for (var i = 0; i < length; i++) {
-       var result = caseArray.charAt(Math.floor(Math.random() * charactersLength));
+      var randPos = (Math.floor(Math.random() * charactersLength));
+      var result = caseString.charAt(randPos);
+      console.log(result);
+      resultArray.push(result);
     }
   }
-console.log(generatePassword(passLength));
+  resultArray = [];
+  console.log(resultArray);
+
+
+  // invoking function
+  generatePassword(passLength);
+
+  var completedPassword = resultArray.join("");
+alert('Your password is: ' + completedPassword);
 }
 
 var generate = document.getElementById("generate");
